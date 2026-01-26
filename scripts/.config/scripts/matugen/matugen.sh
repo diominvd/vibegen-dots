@@ -2,7 +2,6 @@
 
 set -uo pipefail
 
-# Enable logging to a file and show output in terminal
 LOG_FILE="$HOME/.cache/matugen_debug.log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
@@ -67,6 +66,10 @@ echo "> Reloading Kitty and Shell"
 if pgrep -x kitty >/dev/null; then
     killall -SIGUSR1 kitty || true
 fi
+
+# Neovim
+echo ">Reload neovim"
+pkill -SIGUSR1 nvim
 
 # Mako
 echo "> Reloading Mako"

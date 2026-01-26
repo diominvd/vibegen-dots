@@ -1,0 +1,11 @@
+-- vim.api.nvim_create_autocmd("Signal", {
+--     pattern = "SIGUSR1",
+--     callback = function()
+--         dofile(vim.fn.stdpath("config") .. "/lua/colors.lua")
+--         package.loaded["lualine"] = nil
+--         require("lualine").setup(require("plugins.lualine").opts)
+--     end,
+-- })
+
+-- -- На старте: Загрузи цвета
+-- pcall(dofile, vim.fn.stdpath("config") .. "/lua/colors.lua")

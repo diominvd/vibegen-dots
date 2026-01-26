@@ -33,9 +33,9 @@ alias mpdr='echo "> Restarting MPD & cleaning up..."; \
     echo "> MPD is fresh now."'
 
 # Scripts
-alias mypackages="~/.config/scripts/sys-menu/maintenance/packages.sh"
-alias update="sudo ~/.config/scripts/sys-menu/maintenance/update.sh"
-alias pclean="sudo ~/.config/scripts/sys-menu/maintenance/clean.sh"
+alias mypackages="~/.config/scripts/system-menu_scripts/installed_packages.sh"
+alias update="sudo ~/.config/scripts/system-menu_scripts/update_system.sh"
+alias pclean="sudo ~/.config/scripts/system-menu_scripts/clean_cache/clean-cache.py"
 
 # Variables
 export HISTFILE="$HOME/.cache/zsh_history"

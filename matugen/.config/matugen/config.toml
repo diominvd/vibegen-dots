@@ -14,6 +14,10 @@ output_path = '~/.config/kitty/colors.conf'
 input_path = "~/.config/matugen/templates/starship/starship.toml"
 output_path = "~/.config/starship.toml"
 
+[templates.neovim]
+input_path = "~/.config/matugen/templates/neovim/nvim.lua"
+output_path = "~/.config/nvim/lua/colors.lua"
+
 [templates.mako]
 input_path = "~/.config/matugen/templates/mako/mako.conf"
 output_path = "~/.config/mako/config"

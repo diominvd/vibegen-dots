@@ -1,52 +1,30 @@
 return {
     "nvim-lualine/lualine.nvim",
-    opts = function()
-        local colors = {
-            accent = 4,
-            fg     = 7,
-            black  = 0,
-        }
-
-        return {
-            options = {
-                theme = "16color",
-                globalstatus = true,
-                section_separators = { left = '', right = '' },
-                component_separators = { left = '│', right = '│' },
-            },
-            sections = {
-                lualine_a = {
-                    {
-                        "mode",
-                        color = { fg = colors.black, bg = colors.accent, gui = "bold" }
-                    },
-                },
-                lualine_b = {
-                    { "branch", icon = "󰊢", color = { fg = colors.accent } },
-                },
-                lualine_c = {
-                    {
-                        "filetype",
-                        icon_only = true,
-                        padding = { left = 1, right = 0 },
-                        color = { fg = colors.accent }
-                    },
-                    { "filename", path = 0, color = { fg = colors.fg } },
-                },
-                lualine_x = {
-                    { "diagnostics", symbols = { error = "󰅚 ", warn = "󰀪 ", info = "󰋽 ", hint = "󰌶 " } },
-                },
-                lualine_y = {
-                    { "location", color = { fg = colors.accent } },
-                },
-                lualine_z = {
-                    {
-                        function() return "󰚑" end,
-                        color = { fg = colors.black, bg = colors.accent },
-                        padding = { left = 1, right = 1 },
-                    },
-                },
-            },
-        }
-    end,
+    event = "VeryLazy",
+    opts = {
+        options = {
+            theme = "base16",
+            globalstatus = true,
+            icons_enabled = true,
+            component_separators = { left = '', right = '' },
+            section_separators = { left = '', right = '' },
+            disabled_filetypes = { statusline = { "dashboard", "alpha", "NvimTree" } },
+        },
+        sections = {
+            lualine_a = { "mode" },
+            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_c = { "filename" },
+            lualine_x = { "encoding", "fileformat", "filetype" },
+            lualine_y = { "progress" },
+            lualine_z = { "location" },
+        },
+        inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = { "filename" },
+            lualine_x = { "location" },
+            lualine_y = {},
+            lualine_z = {},
+        },
+    },
 }
