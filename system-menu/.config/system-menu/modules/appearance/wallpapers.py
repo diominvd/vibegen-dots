@@ -33,9 +33,9 @@ def get_wallpaper_nodes(folder: Path) -> List[framework.Node]:
 
     return [
         framework.Action(
-            name=f.name,               # Только имя файла (текст в Rofi)
+            name=f.name,
             command=lambda p=str(f): set_wallpaper(p),
-            icon=str(f),               # Полный путь (только для превью)
+            icon=str(f),
             exit=True
         ) for f in files
     ]
@@ -49,12 +49,16 @@ def get_nodes() -> List[framework.Node]:
 
     for folder in folders:
         conf = FOLDER_CONFIG.get(folder.name, {"color": "#ffffff", "icon": ""})
-        # Два пробела для корректной работы clean_selection_name
-        colored_icon = f"<span foreground='{conf['color']}'>{conf['icon']}</span>  "
-
-        nodes.append(framework.Parent(
+        
+        node = framework.Parent(
             name=folder.name,
-            icon=colored_icon,
+            icon=conf['icon'],
             children=lambda f=folder: get_wallpaper_nodes(f)
-        ))
+        )
+        # Просто прокидываем цвет атрибутом, 
+        # чтобы основной скрипт покрасил иконку сам
+        node.color = conf['color']
+        
+        nodes.append(node)
+        
     return nodes
