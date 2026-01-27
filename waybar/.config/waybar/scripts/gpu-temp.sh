@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# GPU Temperature script for Waybar
-# Supports NVIDIA GPUs using nvidia-smi
-
 build_output() {
     local icon class temp gpu_name utilization memory power tooltip
 

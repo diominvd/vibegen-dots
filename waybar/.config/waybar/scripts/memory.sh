@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Memory status script for Waybar with top process tooltip
-
 Signal() {
     pkill -RTMIN+10 waybar 2>/dev/null
 }

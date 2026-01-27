@@ -12,11 +12,12 @@
     "custom/brightness",
     "pulseaudio",
     "network",
+    "custom/mihomo",
     "battery",
     "tray",
     "hyprland/language",
     "clock",
-    "custom/power",
+    "custom/power"
   ],
 
   // Groups
@@ -130,6 +131,15 @@
     "format-disconnected": "󰖪  Off",
     "on-click": "kitty -e cloudflare-speed-cli",
     "on-click-right": "kitty -e wifitui",
+  },
+   "custom/mihomo": {
+      "format": "{}",
+      "return-type": "json",
+      "interval": 1,
+      "exec": "~/.config/waybar/scripts/mihomo.sh",
+      "on-click": "~/.config/waybar/scripts/mihomo.sh --toggle",
+      "on-click-right": "kitty --hold -e mihomo-tui",
+      "tooltip": false
   },
   "battery": {
     "interval": 60,

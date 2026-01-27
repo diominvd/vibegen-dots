@@ -57,6 +57,7 @@ menu {
 #bluetooth,
 #pulseaudio,
 #network,
+#custom-mihomo,
 #battery,
 #language {
     background: @surface_variant;
@@ -67,14 +68,20 @@ menu {
 #bluetooth:hover,
 #pulseaudio:hover,
 #network:hover,
+#custom-mihomo:hover,
 #battery:hover,
 #language:hover {
     background: @secondary_container;
     color: @on_secondary_container;
 }
 
+#custom-mihomo.connected {
+  background: @primary;
+  color: @on_primary;
+}
+
 #pulseaudio.muted {
-    background-color: @tertiary_container;
+    background: @tertiary_container;
     color: @on_tertiary_container;
 }
 #pulseaudio.muted:hover {
