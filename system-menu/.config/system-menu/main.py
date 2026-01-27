@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import re
 import subprocess
@@ -39,7 +38,6 @@ class RofiTheme:
         return cls.LINES_CONFIG.get(node_name, cls.DEFAULT_LINES)
 
 def clean_selection_name(selection: str) -> str:
-    """Очистка строки для поиска объекта в списке items"""
     res = selection.split("\0icon")[0]
     if "\t" in res:
         res = res.split("\t")[0]
@@ -78,6 +76,7 @@ def build_rofi_theme(height: int, lines: int, has_search: bool, width: int, show
 
 def show_menu(node: framework.Parent, path_names: List[str] = None):
     actual_path = path_names or []
+    selected_index = 0
     while True:
         items = node.get_children()
         is_inside_wallpapers = "Wallpapers" in actual_path
@@ -104,6 +103,7 @@ def show_menu(node: framework.Parent, path_names: List[str] = None):
         theme = build_rofi_theme(win_h, min(len(items) or 1, RofiTheme.get_lines_limit(node.name)), node.search, RofiTheme.get_width(node.name), show_icons)
 
         cmd = ["rofi", "-dmenu", "-markup-rows", "-i", "-p", actual_path[-1] if actual_path else "System", "-theme-str", theme,
+               "-selected-row", str(selected_index),
                "-kb-move-char-back", "", "-kb-move-char-forward", "", "-kb-custom-1", "Left", "-kb-accept-entry", "Return,KP_Enter,Right"]
 
         proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
@@ -115,7 +115,14 @@ def show_menu(node: framework.Parent, path_names: List[str] = None):
             return "BACK"
 
         sel = clean_selection_name(stdout.strip())
-        target = next((i for i in items if i.name == sel), None)
+        
+        target = None
+        for idx, item in enumerate(items):
+            if item.name == sel:
+                target = item
+                selected_index = idx
+                break
+        
         if not target:
             continue
 
@@ -140,16 +147,16 @@ def get_waybar_node(waybar_mod):
         )
 
     return framework.Parent("Waybar", icon="", children=[
-        framework.Parent("Panel settings", icon="󰻵", children=[
+        framework.Parent("Panel settings", icon="", children=[
             make_t("Color", "panel-color.css", "panel/colors", ".css"),
             make_t("Position", "panel-position.jsonc", "panel/positions", ".jsonc"),
             make_t("Shape", "panel-shape.css", "panel/shapes", ".css"),
-            framework.Parent("Presets", icon="", search=True, children=lambda: [
+            framework.Parent("Presets", icon="", search=True, children=lambda: [
                 framework.Action(name=n, command=lambda x=n: waybar_mod.set_symlink(waybar_mod.WAYBAR_THEMES_DIR / "panel/presets", x, ".jsonc", "panel-preset.jsonc"))
                 for n in waybar_mod.get_files_in(waybar_mod.WAYBAR_THEMES_DIR / "panel/presets", ".jsonc")
             ])
         ]),
-        framework.Parent("Widgets settings", icon="󰆦", children=[
+        framework.Parent("Widgets settings", icon="", children=[
             make_t("Color", "widgets-color.css", "widgets/colors", ".css"),
             make_t("Shape", "widgets-shape.css", "widgets/shapes", ".css"),
         ])
@@ -181,7 +188,7 @@ if __name__ == "__main__":
                 framework.Action("Update system", f"{SCRIPTS_DIR}/update_system.sh", icon="", color="yellow", exit=True),
                 framework.Action("Clean cache", f"kitty --title='cleaner' -e {SCRIPTS_DIR}/clean_cache/clean_cache.py", icon="", color="yellow", exit=True)
             ]),
-            framework.Parent("Capture", icon="", children=[
+            framework.Parent("Capture", icon="", children=[
                 framework.Action("Record screen", f"{SCRIPTS_DIR}/record_screen.sh", icon="", exit=True),
                 framework.Action("Full screenshot", f"{SCRIPTS_DIR}/make_full_screenshot.sh", icon="", exit=True),
             ]),

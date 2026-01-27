@@ -45,6 +45,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(starship init zsh)"
 
+export GEMINI_API_KEY=$(cat ~/.dotfiles/env/keys/.gemini)
+
 TRAPUSR1() {
   zle && zle reset-prompt
 }

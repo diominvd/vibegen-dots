@@ -6,7 +6,7 @@
   "agent": {
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash",
+      "model": "gemini-2.5-pro",
     },
     "default_profile": "write",
     "always_allow_tool_actions": true,
