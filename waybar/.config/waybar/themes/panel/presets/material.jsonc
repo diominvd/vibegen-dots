@@ -113,12 +113,13 @@
 
   // Right
   "custom/brightness": {
-    "format": "󰃠  {}",
     "exec": "~/.config/waybar/scripts/brightness.sh",
     "return-type": "json",
     "interval": 1,
-    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh --inc",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh --dec",
+    "on-click": "~/.config/waybar/scripts/brightness.sh --toggle",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",

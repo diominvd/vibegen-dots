@@ -54,7 +54,7 @@ menu {
 #disk.home,
 #custom-minimize,
 #custom-recorder,
-#custom-brightness,
+#custom-brightness.off,
 #bluetooth,
 #pulseaudio,
 #network,
@@ -75,6 +75,11 @@ menu {
 #language:hover {
     background: @secondary_container;
     color: @on_secondary_container;
+}
+
+#custom-brightness.on {
+  background: @primary;
+  color: @on_primary;
 }
 
 #custom-mihomo.connected {

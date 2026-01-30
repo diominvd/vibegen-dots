@@ -74,6 +74,10 @@ menu {
     background: transparent;
     color: @on_secondary_container;
 }
+#custom-brightness.on {
+  background: transparent;
+  color: @on_secondary_container;
+}
 
 #pulseaudio.muted {
     background-color: transparent;
