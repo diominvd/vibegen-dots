@@ -3,6 +3,11 @@
 -- ============================================================================
 
 -- ============================================================================
+-- Remaping
+-- ============================================================================
+vim.keymap.set("x", "p", [["_dP"]]) -- Past text without copy deleted to buffer
+
+-- ============================================================================
 -- Save & Exit Commands (Leader + w/q)
 -- ============================================================================
 vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, desc = "Save current file" })
@@ -42,7 +47,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, desc = "Move sele
 -- ============================================================================
 -- Line Operations
 -- ============================================================================
-vim.keymap.set("n", "<leader>d", "dd", { noremap = true, desc = "Delete current line" })
+vim.keymap.set("n", "<leader>d", "\"_d", { noremap = true, desc = "Remove to black hole" })
 vim.keymap.set("n", "<leader>y", "yy", { noremap = true, desc = "Yank current line" })
 vim.keymap.set("n", "Y", "y$", { noremap = true, desc = "Yank to end of line" })
 
@@ -51,8 +56,17 @@ vim.keymap.set("n", "Y", "y$", { noremap = true, desc = "Yank to end of line" })
 -- ============================================================================
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>q", ":close<CR>", { noremap = true, desc = "Close current split" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { noremap = true, desc = "Equalize window sizes" })
 vim.keymap.set("n", "<leader>sx", ":close<CR>", { noremap = true, desc = "Close current window" })
+
+-- ============================================================================
+-- Window Resize
+-- ============================================================================
+vim.keymap.set("n", "<M-k>", ":resize +2<CR>", { noremap = true, silent = true, desc = "Resize top" })
+vim.keymap.set("n", "<M-j>", ":resize -2<CR>", { noremap = true, silent = true, desc = "Resize down" })
+vim.keymap.set("n", "<M-h>", ":vertical resize -2<CR>", { noremap = true, silent = true, desc = "Resize left" })
+vim.keymap.set("n", "<M-l>", ":vertical resize +2<CR>", { noremap = true, silent = true, desc = "Resize right" })
 
 -- ============================================================================
 -- Buffer Management
