@@ -183,10 +183,12 @@ if __name__ == "__main__":
                 get_waybar_node(waybar)
             ]),
             framework.Parent("Maintenance", icon="󰒓", children=[
-                framework.Action("Systemd", "kitty --hold -e systemd-manager-tui", icon="", exit=True),
-                framework.Action("Packages", f"{SCRIPTS_DIR}/installed_packages.sh", icon="", exit=True),
-                framework.Action("Update system", f"{SCRIPTS_DIR}/update_system.sh", icon="", color="yellow", exit=True),
-                framework.Action("Clean cache", f"kitty --title='cleaner' -e {SCRIPTS_DIR}/clean_cache/clean_cache.py", icon="", color="yellow", exit=True)
+                framework.Action("Systemd manager", "kitty --hold -e systemd-manager-tui", icon="", exit=True),
+                framework.Action("Installed packages", f"kitty -e {SCRIPTS_DIR}/installed_packages.sh", icon="", exit=True),
+                framework.Action("System health", f"kitty -e {SCRIPTS_DIR}/system_health.py", icon="", exit=True),
+                framework.Action("Update system", f"kitty -e sudo {SCRIPTS_DIR}/update_system.py", icon="", color="#e7cf2d", exit=True),
+                framework.Action("Clean cache", f"kitty -e sudo {SCRIPTS_DIR}/clean_cache.py", icon="󰃢", color="#e7cf2d", exit=True),
+                framework.Action("Backups manager", f"kitty -e sudo {SCRIPTS_DIR}/backup.py", icon="", color="#e7cf2d", exit=True)
             ]),
             framework.Parent("Capture", icon="", children=[
                 framework.Action("Record screen", f"{SCRIPTS_DIR}/record_screen.sh", icon="", exit=True),
@@ -195,8 +197,8 @@ if __name__ == "__main__":
             framework.Parent("Power menu", icon="", children=[
                 framework.Action("Lock", "hyprlock", icon="", exit=True),
                 framework.Action("Logout", "hyprctl dispatch exit", icon="󰍃", exit=True),
-                framework.Action("Reboot", "systemctl reboot", icon="", color="red", exit=True),
-                framework.Action("Poweroff", "systemctl poweroff", icon="󰚦", color="red", exit=True),
+                framework.Action("Reboot", "systemctl reboot", icon="󰑓", color="#e66d52", exit=True),
+                framework.Action("Poweroff", "systemctl poweroff", icon="󰚦", color="#e66d52", exit=True),
             ])
         ])
         return items
