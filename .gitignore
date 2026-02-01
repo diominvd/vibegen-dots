@@ -2,3 +2,9 @@ env
 yamusic
 scripts/.config/scripts/vpn
 mihomo
+
+
+**/colors.css
+**/colors.conf
+**/colors.lua
+**/colors.rasi
