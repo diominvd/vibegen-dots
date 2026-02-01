@@ -7,7 +7,11 @@
   "reload_style_on_change": true,
 
   "modules-left": ["custom/launcher", "group/disks", "group/media"],
-  "modules-center": ["hyprland/workspaces", "custom/minimize", "custom/recorder"],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/minimize",
+    "custom/recorder",
+  ],
   "modules-right": [
     "custom/brightness",
     "pulseaudio",
@@ -17,7 +21,7 @@
     "tray",
     "hyprland/language",
     "clock",
-    "custom/power"
+    "custom/power",
   ],
 
   // Groups
@@ -119,7 +123,7 @@
     "on-click": "~/.config/waybar/scripts/brightness.sh --toggle",
     "on-scroll-up": "brightnessctl set +5%",
     "on-scroll-down": "brightnessctl set 5%-",
-    "tooltip": false
+    "tooltip": false,
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -140,14 +144,14 @@
     "on-click": "kitty -e cloudflare-speed-cli",
     "on-click-right": "kitty -e wifitui",
   },
-   "custom/mihomo": {
-      "format": "{}",
-      "return-type": "json",
-      "interval": 1,
-      "exec": "~/.config/waybar/scripts/mihomo.sh",
-      "on-click": "~/.config/waybar/scripts/mihomo.sh --toggle",
-      "on-click-right": "kitty --hold -e mihomo-tui",
-      "tooltip": false
+  "custom/mihomo": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/mihomo.sh",
+    "on-click": "~/.config/waybar/scripts/mihomo.sh --toggle",
+    "on-click-right": "kitty --hold -e mihomo-tui",
+    "tooltip": false,
   },
   "custom/battery": {
     "exec": "~/.config/waybar/scripts/battery.sh",
@@ -157,7 +161,7 @@
     "format": "{}",
     "on-click": "~/.config/scripts/power_save.sh",
     "on-click-right": "kitty -e sudo powertop",
-    "tooltip": true
+    "tooltip": true,
   },
   "tray": {
     "icon-size": 14,

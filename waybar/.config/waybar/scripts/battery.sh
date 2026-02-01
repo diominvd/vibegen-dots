@@ -17,7 +17,7 @@ CLASS="normal"
 
 # Logic for Tooltip and specific Icons
 if [[ "$STATUS" == "Not charging" ]] || [[ "$STATUS" == "Full" ]]; then
-    ICON="" 
+    ICON=""
     TOOLTIP="AC Connected (Battery Protected)"
 elif [[ "$STATUS" == "Charging" ]]; then
     ICON=""
