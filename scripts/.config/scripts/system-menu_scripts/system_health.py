@@ -46,12 +46,24 @@ def get_cpu_temp():
         return None
 
 def get_gpu_info():
-    """Bonus: Fetches NVIDIA GPU temperature if available."""
+    """Fetches NVIDIA GPU temperature if available."""
     try:
         out = subprocess.check_output(["nvidia-smi", "--query-gpu=temperature.gpu", "--format=csv,noheader,nounits"], text=True)
         return out.strip() + "°C"
     except:
         return "N/A"
+
+def get_energy_rate():
+    try:
+        raw_data = subprocess.check_output(["upower", "-i", "/org/freedesktop/UPower/devices/battery_BAT0"], text=True)
+    except Exception:
+        raw_data = subprocess.check_output(["upower", "-b"], text=True)
+    stats = {
+        line.split(":", 1)[0].strip(): line.split(":", 1)[1].strip()
+        for line in raw_data.splitlines()
+        if ":" in line
+    }
+    return stats.get("energy-rate", "N/A")
 
 def get_ram_usage():
     try:
@@ -89,6 +101,7 @@ def print_header():
 def display_dashboard():
     temp = get_cpu_temp()
     gpu_temp = get_gpu_info()
+    energy_rate = get_energy_rate()
     ram_str, ram_pct = get_ram_usage()
     disk_str, disk_pct = get_disk_usage()
     
@@ -104,11 +117,12 @@ def display_dashboard():
     disk_color = Colors.RED if disk_pct > 90 else Colors.GREEN
 
     print(f"{Colors.BOLD}STATISTICS:{Colors.RESET}")
-    print(f"  {Colors.CYAN}Uptime:      {Colors.RESET}{uptime}")
-    print(f"  {Colors.CYAN}CPU Temp:    {temp_color}{temp_display}{Colors.RESET}")
-    print(f"  {Colors.CYAN}GPU Temp:    {Colors.GREEN}{gpu_temp}{Colors.RESET}")
-    print(f"  {Colors.CYAN}RAM Usage:   {ram_color}{ram_str}{Colors.RESET}")
-    print(f"  {Colors.CYAN}Disk Root:   {disk_color}{disk_str}{Colors.RESET}")
+    print(f"  {Colors.CYAN}Uptime:        {Colors.RESET}{uptime}")
+    print(f"  {Colors.CYAN}CPU Temp:      {temp_color}{temp_display}{Colors.RESET}")
+    print(f"  {Colors.CYAN}GPU Temp:      {Colors.GREEN}{gpu_temp}{Colors.RESET}")
+    print(f"  {Colors.CYAN}Energy Rate:   {Colors.GREEN}{energy_rate}{Colors.RESET}")
+    print(f"  {Colors.CYAN}RAM Usage:     {ram_color}{ram_str}{Colors.RESET}")
+    print(f"  {Colors.CYAN}Disk Root:     {disk_color}{disk_str}{Colors.RESET}")
     
     print(f"\n{Colors.BOLD}QUICK ACTIONS:{Colors.RESET}")
     print(f"  {Colors.BLUE}1){Colors.RESET} Open htop           {Colors.BLUE}2){Colors.RESET} Open btop")
