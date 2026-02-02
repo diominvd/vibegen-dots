@@ -1,0 +1,28 @@
+# Settings
+max-history=100
+sort=-time
+default-timeout=5000
+font=JetBrainsMono Nerd Font 10
+
+# Geometry
+width=300
+height=110
+margin=10
+padding=15
+border-size=2
+border-radius=12
+
+# Icons
+icons=1
+max-icon-size=48
+
+# Colors
+background-color=#141313ef
+text-color=#e5e2e0
+border-color=#c7c7bc
+progress-color=over #474740
+
+# Urgency
+[urgency=high]
+border-color=#ffb4ab
+default-timeout=0
