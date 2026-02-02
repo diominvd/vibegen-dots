@@ -1,0 +1,8 @@
+{
+  "include": [
+    "~/.config/waybar/components/panel-position.jsonc",
+    "~/.config/waybar/components/panel-preset.jsonc",
+    "~/.config/waybar/components/panel-monitors.jsonc",
+  ],
+  "style": "~/.config/waybar/style.css",
+}

@@ -1,0 +1,19 @@
+@define-color bg0        #202020; /* main background */
+@define-color bg1        #32302f; /* modules background */
+@define-color bg2        #3c3836; /* hover / active */
+@define-color bg3        #45403d; /* separators */
+
+@define-color fg0        #d4be98; /* main text */
+@define-color fg1        #ddc7a1; /* brighter text */
+@define-color fg2        #bdae93; /* muted text */
+
+@define-color red        #ea6962;
+@define-color orange     #e78a4e;
+@define-color yellow     #d8a657;
+@define-color green      #a9b665;
+@define-color aqua       #89b482;
+@define-color blue       #7daea3;
+@define-color purple     #d3869b;
+
+@define-color gray       #7c6f64;
+@define-color shadow     rgba(0, 0, 0, 0.35);

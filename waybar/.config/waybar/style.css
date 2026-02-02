@@ -1,0 +1,9 @@
+@import "components/colors.css";
+@import "components/panel-color.css";
+@import "components/widgets-style.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+}

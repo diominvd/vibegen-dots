@@ -1,0 +1,98 @@
+/* ==============================================================================
+   MENU
+   ============================================================================== */
+menu {
+    background: @bg0;
+    border-radius: 0px;
+}
+
+/* ==============================================================================
+   WORKSPACES
+   ============================================================================== */
+#workspaces {
+    margin-left: 20px;
+}
+
+#workspaces button {
+    padding: 0px 2px;
+    background: transparent;
+    color: @gray;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: @fg1;
+}
+
+#workspaces button.visible,
+#workspaces button.persistent {
+    color: @fg1;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: @fg0;
+}
+
+#workspaces button.visible:hover,
+#workspaces button.persistent:hover {
+    color: @fg1;
+}
+
+/* ==============================================================================
+   MEDIA PLAYER
+   ============================================================================== */
+#media {
+    margin: 8px;
+}
+
+#custom-media-info,
+#custom-media-prev,
+#custom-media-play,
+#custom-media-next {
+    margin: 0 8px;
+    color: @gray;
+}
+#custom-media-prev:hover,
+#custom-media-play:hover,
+#custom-media-next:hover {
+    color: @fg0;
+}
+
+/* ==============================================================================
+   STANDARD MODULES - BASE STYLES
+   ============================================================================== */
+#clock, 
+#custom-recorder,
+#custom-battery,
+#language {
+    background: transparent;
+    color: @gray;
+}
+
+/* ==============================================================================
+   MARGINS
+   ============================================================================== */
+#custom-minimize,
+#custom-brightness,
+#pulseaudio,
+#network,
+#custom-mihomo,
+#custom-battery,
+#tray {
+    margin: 8px;
+}
+
+#language {
+    margin-right: 20px;
+}
+
+/* ==============================================================================
+   HOVER STATES
+   ============================================================================== */
+#custom-recorder:hover,
+#custom-battery:hover,
+#language:hover {
+    background: transparent;
+    color: @fg0;
+}

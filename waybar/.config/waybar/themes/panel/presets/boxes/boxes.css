@@ -1,0 +1,203 @@
+/* ==============================================================================
+   MENU
+   ============================================================================== */
+* {
+  border-radius: 0;
+}
+
+menu {
+    background: @bg0;
+}
+
+/* ==============================================================================
+   MEDIA PLAYER
+   ============================================================================== */
+#media {
+    margin: 6px 0px;
+    background: @bg0;
+}
+
+#custom-media-info {
+    padding: 0px 6px;
+    color: @fg0;
+    background: @bg1;
+    border: 2px solid @orange;
+}
+
+#custom-media-prev,
+#custom-media-play {
+    padding: 0 6px;
+    color: @fg0;
+    background: @bg1;
+    border-top: 2px solid @orange;
+    border-bottom: 2px solid @orange;
+}
+
+#custom-media-next {
+    padding: 0 6px;
+    color: @fg0;
+    background: @bg1;
+    border-right: 2px solid @orange;
+    border-top: 2px solid @orange;
+    border-bottom: 2px solid @orange;
+}
+
+#custom-media-prev:hover,
+#custom-media-play:hover,
+#custom-media-next:hover {
+    color: @fg1;
+    background: @bg2;
+}
+
+/* ==============================================================================
+   WORKSPACES
+   ============================================================================== */
+#workspaces {
+    margin: 6px 0;
+    padding: 0px;
+}
+
+#workspaces button {
+    margin: 0 2px;
+    padding: 0px 6px;
+    background: @bg1;
+    color: @fg0;
+    border: 2px solid @blue;
+}
+
+#workspaces button.active {
+    background: @bg2;
+    color: @red;
+    border: 2px solid @red;
+}
+
+#workspaces button:hover {
+    background: @bg2;
+    color: @fg1;
+}
+
+#workspaces button.visible,
+#workspaces button.persistent {
+    color: @fg1;
+}
+
+#workspaces button.visible:hover,
+#workspaces button.persistent:hover {
+    color: @fg1;
+}
+
+/* ==============================================================================
+   DISK
+   ============================================================================== */
+#disk.root,
+#disk.home {
+    margin: 6px 2px;
+    padding: 2px 8px;
+    background: @bg1;
+    color: @fg0;
+    border: 2px solid @green;
+}
+
+#disk.root {
+    margin-left: 20px;
+}
+
+/* ==============================================================================
+   STANDARD MODULES - BASE STYLES
+   ============================================================================== */
+#custom-minimize,
+#custom-recorder,
+#custom-brightness,
+#bluetooth,
+#pulseaudio,
+#network,
+#custom-mihomo,
+#custom-battery,
+#language,
+#tray,
+#clock {
+    margin: 6px 2px;
+    padding: 2px 8px;
+    background: @bg1;
+    color: @fg0;
+}
+
+/* ==============================================================================
+   STANDARD MODULES - BORDERS
+   ============================================================================== */
+#custom-minimize {
+    margin-left: 0;
+    border: 2px solid @blue;
+}
+
+#custom-recorder {
+    border: 2px solid @orange;
+}
+
+#custom-brightness {
+    border: 2px solid @yellow;
+}
+
+#pulseaudio {
+    border: 2px solid @orange;
+}
+
+#network,
+#custom-mihomo {
+    border: 2px solid @blue;
+}
+
+#custom-battery {
+    border: 2px solid @green;
+}
+
+#language {
+    border: 2px solid @yellow;
+}
+
+#tray {
+  border: 2px solid @gray;
+}
+
+#clock {
+    border: 2px solid @red;
+    margin-right: 20px;
+}
+
+/* ==============================================================================
+   HOVER STATES
+   ============================================================================== */
+#custom-minimize:hover,
+#custom-brightness:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-mihomo:hover,
+#custom-battery:hover,
+#language:hover {
+    background: @bg2;
+    color: @fg1;
+}
+
+/* ==============================================================================
+   ACTIVE STATES
+   ============================================================================== */
+#custom-brightness.on,
+#custom-mihomo.connected,
+#custom-battery.eco {
+    background: @bg2;
+    color: @fg2;
+}
+
+/* ==============================================================================
+   AUDIO STATES
+   ============================================================================== */
+#pulseaudio.muted {
+    background: @bg2;
+    color: @fg2;
+}
+
+#pulseaudio.muted:hover {
+    background: @bg1;
+    color: @fg1;
+}

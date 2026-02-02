@@ -1,0 +1,170 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 20,
+  "spacing": 2,
+  "exclusive": true,
+  "reload_style_on_change": true,
+
+  "modules-left": ["hyprland/workspaces", "group/media"],
+  "modules-center": [
+    "clock",
+    "custom/minimize",
+    "custom/recorder",
+  ],
+  "modules-right": [
+    "custom/brightness",
+    "pulseaudio",
+    "network",
+    "custom/mihomo",
+    "custom/battery",
+    "tray",
+    "hyprland/language"
+  ],
+
+  // Groups
+  "group/disks": {
+    "orientation": "horizontal",
+    "modules": ["disk#root", "disk#home"],
+  },
+  "group/media": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "media-controls",
+      "transition-left-to-right": true,
+      "click-to-reveal": false,
+    },
+    "modules": [
+      "custom/media-info",
+      "custom/media-prev",
+      "custom/media-play",
+      "custom/media-next",
+    ],
+  },
+
+  // left
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{name}",
+  },
+  "custom/media-info": {
+    "exec": "$HOME/.config/waybar/scripts/music.sh | sed 's/^RADIO://'",
+    "interval": 2,
+    "max-length": 35,
+    "format": "{}",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "hyprctl dispatch togglespecialworkspace magic",
+    "tooltip": false,
+  },
+  "custom/media-prev": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/music.sh | grep -qE 'RADIO:|No music' && echo '' || echo 'pr'",
+    "interval": 1,
+    "on-click": "playerctl previous",
+  },
+  "custom/media-play": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl metadata --format '{\"text\": \"{{status}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' 2>/dev/null",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "format-icons": { "Playing": "pause", "Paused": "play", "Stopped": "play" },
+  },
+  "custom/media-next": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/music.sh | grep -qE 'RADIO:|No music' && echo '' || echo 'nx'",
+    "interval": 1,
+    "on-click": "playerctl next",
+  },
+
+  // Center
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %d %B %Y  %H:%M:%S}",
+    "tooltip": false,
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+  "custom/minimize": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/minimize.sh",
+    "on-click": "$HOME/.config/waybar/scripts/minimize.sh show",
+  },
+  "custom/recorder": {
+    "format": "| REC",
+    "exec": "pgrep -x wf-recorder > /dev/null && echo \"running\"",
+    "interval": 1,
+    "on-click": "pkill -INT wf-recorder && notify-send -i camera-video \"Recording stopped\"",
+    "tooltip": false,
+  },
+
+  // Right
+  "custom/brightness": {
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/.config/waybar/scripts/brightness.sh --toggle",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false,
+  },
+  "pulseaudio": {
+    "format": "<span foreground='#d4be98'>{icon}</span>",
+    "format-muted": "<span foreground='#d4be98'></span>",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""],
+    },
+    "scroll-step": 5,
+    "on-click": "pactl list short sinks | awk '{print $1}' | xargs -I{} pactl set-sink-mute {} toggle",
+    "on-click-right": "kitty -e wiremix",
+    "on-scroll-up": "pactl list short sinks | awk '{print $1}' | xargs -I{} pactl set-sink-volume {} +5%",
+    "on-scroll-down": "pactl list short sinks | awk '{print $1}' | xargs -I{} pactl set-sink-volume {} -5%",
+    "max-volume": 150
+  },
+  "network": {
+    "interval": 5,
+    "format-wifi": "<span foreground='#d4be98'>󰤨</span>",
+    "format-ethernet": "<span foreground='#d4be98'></span>",
+    "format-disconnected": "󰤮",
+    "on-click": "kitty -e cloudflare-speed-cli",
+    "on-click-right": "kitty -e wifitui",
+  },
+  "custom/mihomo": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/mihomo.sh",
+    "on-click": "~/.config/waybar/scripts/mihomo.sh --toggle",
+    "on-click-right": "kitty --hold -e mihomo-tui",
+    "tooltip": false,
+  },
+  "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.sh",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 8,
+    "format": "{}",
+    "on-click": "~/.config/scripts/power_save.sh",
+    "on-click-right": "kitty -e sudo powertop",
+    "tooltip": true,
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU",
+  },
+}

@@ -1,0 +1,22 @@
+add_newline = false
+
+format = """$directory$git_branch$git_status$character"""
+
+[directory]
+style = "bold white" 
+format = "[$path]($style) "
+truncation_length = 3
+
+[git_branch]
+symbol = "󰊢 "
+style = "bold magenta"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([$ahead_behind]($style))"
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol   = "[](bold red)"
+
