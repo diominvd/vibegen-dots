@@ -41,7 +41,7 @@ sudo pacman -S waybar rofi mako swww matugen hyprlock kvantum kvantum-qt5 xdg-de
 yay -S adw-gtk-theme ttf-jetbrains-mono-nerd gruvbox-material-icon-theme-git
 
 # Terminal & Shell
-sudo pacman -S kitty zsh tmux starship fastfetch eza bat
+sudo pacman -S kitty zsh tmux starship fastfetch eza bat ranger
 yay -S oh-my-zsh-git
 
 # Tools & Utils
@@ -76,13 +76,13 @@ Follow these steps to install and set up the dotfiles.
 
 4.  **Remove conflicting configurations** (this will prevent conflicts when `stow` creates symlinks):
     ```bash
-    rm -rf ~/.config/{hypr,waybar,rofi,kitty,mako,fastfetch,nvim,tmux,zed,mpd,yamusic,qBittorrent}
+    rm -rf ~/.config/{hypr,waybar,rofi,kitty,mako,fastfetch,nvim,tmux,zed,mpd,yamusic,qBittorrent,ranger}
     rm -f ~/.zshrc
     ```
 
 5.  **Deploy configurations with `stow`**:
     ```bash
-    stow -v -t ~ fastfetch gtk-3.0 gtk-4.0 hypr kitty matugen mpd nvim opencode qBittorrent rofi scripts tmux wallpapers waybar yamusic zed zsh
+    stow -v -t ~ fastfetch gtk-3.0 gtk-4.0 hypr kitty matugen mpd nvim opencode qBittorrent rofi ranger scripts tmux wallpapers waybar yamusic zed zsh
     ```
 
 6.  **Set Zsh as your default shell**:
