@@ -145,7 +145,7 @@
     "interval": 1,
     "exec": "~/.config/waybar/scripts/mihomo.sh",
     "on-click": "~/.config/waybar/scripts/mihomo.sh --toggle",
-    "on-click-right": "kitty --hold -e mihomo-tui",
+    "on-click-right": "kitty -e mihomo-tui",
     "tooltip": false,
   },
   "custom/battery": {
