@@ -1,5 +1,5 @@
 return {
-  dir = vim.fn.stdpath("config"),
+  dir = vim.fn.stdpath("config") .. "/lua/custom_plugins",
   name = "code-time-tracker",
   lazy = false,
 

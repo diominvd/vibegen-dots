@@ -20,7 +20,11 @@ vim.opt.rtp:prepend(lazypath)
 -- ============================================================================
 -- Load all plugins from plugins directory
 -- ============================================================================
-require("lazy").setup("plugins", {
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+    { import = "custom_plugins" },
+  },
   -- Don't notify about changes when plugins spec files are modified
   change_detection = {
     notify = false,
