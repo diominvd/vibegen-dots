@@ -1,0 +1,436 @@
+// Gruvbox Material Dark Hard - Telegram Desktop Theme
+// Main background: #1c1c1c
+
+// ============================================================================
+// COLOR PALETTE - Gruvbox Material Dark Hard
+// ============================================================================
+
+// Backgrounds
+bg0_hard: #1c1c1c;
+bg0:      #1d1d1d;
+bg0_soft: #282828;
+bg1:      #32302f;
+bg2:      #45403d;
+bg3:      #5a524c;
+bg4:      #6f6659;
+
+// Overlays
+overlay: #1c1c1c80;
+overlay_hard: #1c1c1cc0;
+
+// Neutral
+neutral_gray: #928374;
+
+// Foregrounds
+fg:       #d4be98;
+fg0:      #ddc7a1;
+fg1:      #d4be98;
+fg2:      #c5b597;
+fg3:      #b4a689;
+fg4:      #a89984;
+
+// Bright colors (Material palette)
+bright_red:     #ea6962;
+bright_green:   #a9b665;
+bright_yellow:  #d8a657;
+bright_blue:    #7daea3;
+bright_purple:  #d3869b;
+bright_aqua:    #89b482;
+bright_orange:  #e78a4e;
+
+// Neutral colors (darker)
+neutral_red:    #c14a4a;
+neutral_green:  #8a9560;
+neutral_yellow: #b98843;
+neutral_blue:   #6c9a93;
+neutral_purple: #b57379;
+neutral_aqua:   #73956f;
+neutral_orange: #c5703b;
+
+// Faded colors (darkest)
+faded_red:      #9b3b3a;
+faded_green:    #6f7a4d;
+faded_yellow:   #9a6f33;
+faded_blue:     #567c77;
+faded_purple:   #945b62;
+faded_aqua:     #5d7958;
+faded_orange:   #a45830;
+
+// Material colors (main accent colors)
+material_red:    #ea6962;
+material_green:  #a9b665;
+material_yellow: #d8a657;
+material_blue:   #7daea3;
+material_purple: #d3869b;
+material_aqua:   #89b482;
+material_orange: #e78a4e;
+
+none: #00000000;
+
+// ============================================================================
+// BASE WINDOW COLORS
+// ============================================================================
+
+windowActiveTextFg: bright_orange; // active text like online status
+windowBg: bg0_hard; // main background
+windowBgActive: windowActiveTextFg; // filled active areas
+windowBgOver: bg0_soft; // background with mouse over
+windowBgRipple: none; // ripple effect
+windowFg: fg; // main text
+windowFgActive: fg; // text on active areas
+windowFgOver: fg; // text with mouse over
+windowBoldFg: windowFg; // bold text
+windowBoldFgOver: windowBoldFg; // bold text with mouse over
+windowShadowFg: none; // shadow
+windowShadowFgFallback: none; // shadow without opacity
+windowSubTextFg: fg4; // additional text
+windowSubTextFgOver: windowSubTextFg; // additional text with mouse over
+
+shadowFg: windowBg;
+
+// ============================================================================
+// SCROLLBARS
+// ============================================================================
+
+scrollBarBg: bg2; // scroll bar rectangle
+scrollBg: none; // scroll bar background
+scrollBarBgOver: bg3; // scroll bar with mouse over
+scrollBgOver: none; // scroll bar background with mouse over
+
+// ============================================================================
+// MAIN MENU
+// ============================================================================
+
+mainMenuBg: windowBg; // main menu background
+mainMenuCoverBg: bg2; // main menu top cover background
+mainMenuCoverFg: windowFg; // main menu top cover text
+mainMenuCloudFg: fg0;
+mainMenuCloudBg: fg4;
+
+// ============================================================================
+// POPUP MENU
+// ============================================================================
+
+menuBg: bg0; // popup menu background
+menuBgOver: bg0_soft; // popup menu item with mouse over
+menuBgRipple: windowBgRipple; // popup menu ripple
+menuIconFg: bg3; // popup menu icon
+menuIconFgOver: fg3; // popup menu icon with mouse over
+menuSubmenuArrowFg: windowFg; // submenu arrow
+menuFgDisabled: bg4; // disabled text
+menuSeparatorFg: bg1; // separator
+
+smallCloseIconFg: menuIconFg; // small X icon
+smallCloseIconFgOver: menuIconFgOver; // small X icon with mouse over
+
+checkboxFg: menuIconFg; // unchecked checkbox
+
+// ============================================================================
+// INPUT FIELDS
+// ============================================================================
+
+activeLineFg: fg2; // active line (focused input)
+activeLineFgError: bright_red; // active line error state
+inputBorderFg: bg4; // input border (unfocused)
+placeholderFg: neutral_gray; // placeholder (unfocused)
+placeholderFgActive: bg4; // placeholder (focused)
+filterInputBorderFg: neutral_gray; // rounded input border
+filterInputInactiveBg: bg1; // rounded input background (inactive)
+filterInputActiveBg: filterInputInactiveBg; // rounded input background (active)
+
+// ============================================================================
+// BUTTONS
+// ============================================================================
+
+activeButtonBg: neutral_orange; // active button background
+activeButtonBgOver: bright_orange; // active button with mouse over
+activeButtonBgRipple: windowBgRipple; // active button ripple
+activeButtonFg: bg0_hard; // active button text
+activeButtonFgOver: bg0_hard; // active button text with mouse over
+activeButtonSecondaryFg: fg3; // active button additional text
+activeButtonSecondaryFgOver: activeButtonSecondaryFg; // active button additional text with mouse over
+lightButtonBg: menuBg; // light button background
+lightButtonBgOver: menuBgOver; // light button with mouse over
+lightButtonFg: fg1; // light button text
+lightButtonFgOver: lightButtonFg; // light button text with mouse over
+lightButtonBgRipple: windowBgRipple; // light button ripple
+attentionButtonFg: bright_red; // attention button text (logout)
+attentionButtonFgOver: attentionButtonFg; // attention button text with mouse over
+attentionButtonBgOver: lightButtonBgOver; // attention button background with mouse over
+attentionButtonBgRipple: windowBgRipple; // attention button ripple
+
+// ============================================================================
+// DIALOGS (CHAT LIST)
+// ============================================================================
+
+dialogsBg: bg0_hard; // chat list background
+dialogsBgActive: bg1; // chat list active chat background
+dialogsBgOver: bg0; // chat list chat with mouse over
+dialogsNameFg: fg; // chat name text
+dialogsNameFgOver: fg0; // chat name text with mouse over
+dialogsNameFgActive: bright_orange; // active chat name text
+dialogsTextFg: fg3; // last message text
+dialogsTextFgOver: fg2; // last message text with mouse over
+dialogsTextFgActive: fg1; // active chat last message text
+dialogsDraftFg: bright_red; // draft message text
+dialogsDraftFgOver: dialogsDraftFg; // draft message text with mouse over
+dialogsDraftFgActive: dialogsDraftFg; // active chat draft message text
+dialogsDateFg: fg4; // date text
+dialogsDateFgOver: fg3; // date text with mouse over
+dialogsDateFgActive: fg2; // active chat date text
+dialogsVerifiedIconBg: bright_blue; // verified icon background
+dialogsVerifiedIconFg: bg0_hard; // verified icon check
+dialogsSendingIconFg: bright_yellow; // sending message icon (clock)
+dialogsSentIconFg: bright_green; // sent message icon (check)
+dialogsUnreadBg: bright_orange; // unread badge background
+dialogsUnreadFg: bg0_hard; // unread badge text
+dialogsUnreadBgMuted: bg3; // muted unread badge background
+dialogsUnreadFgMuted: fg4; // muted unread badge text
+
+dialogsRippleBg: windowBgRipple; // chat ripple effect
+
+dialogsForwardBg: dialogsBgActive; // forwarding panel background
+dialogsForwardFg: dialogsNameFgActive; // forwarding panel text
+
+searchedBarBg: bg1; // search results bar background
+searchedBarFg: fg3; // search results bar text
+
+// ============================================================================
+// MESSAGES
+// ============================================================================
+
+msgServiceBg: overlay; // service message background (date separators)
+msgServiceFg: fg0; // service message text
+
+msgInBg: bg0; // incoming message background
+msgInShadow: none; // incoming message shadow
+msgOutBg: bg1; // outgoing message background
+msgOutShadow: none; // outgoing message shadow
+
+msgSelectOverlay: overlay; // selected message overlay
+
+msgInDateFg: fg4; // incoming message date
+msgOutDateFg: fg4; // outgoing message date
+msgInDateFgSelected: fg2; // selected incoming message date
+msgOutDateFgSelected: fg2; // selected outgoing message date
+
+historyTextInFg: fg; // incoming message text
+historyTextOutFg: fg; // outgoing message text
+
+historyLinkInFg: bright_blue; // incoming message link
+historyLinkOutFg: bright_aqua; // outgoing message link
+
+msgInReplyBarColor: bright_orange; // incoming message reply bar
+msgOutReplyBarColor: bright_orange; // outgoing message reply bar
+
+msgFileInBg: bright_blue; // incoming file background
+msgFileOutBg: bright_aqua; // outgoing file background
+
+msgWaveformInActive: bright_orange; // incoming voice message active waveform
+msgWaveformInInactive: bg3; // incoming voice message inactive waveform
+msgWaveformOutActive: bright_orange; // outgoing voice message active waveform
+msgWaveformOutInactive: bg3; // outgoing voice message inactive waveform
+
+// ============================================================================
+// MESSAGE FIELD (INPUT)
+// ============================================================================
+
+historyComposeAreaBg: bg0; // message field background
+historyComposeAreaFg: fg; // message field text
+historyComposeAreaFgService: fg3; // message field service text (like bot commands)
+historyReplyBg: bg1; // reply/edit bar background
+historyReplyIconFg: windowActiveTextFg; // reply icon
+historySendIconFg: windowActiveTextFg; // send button icon
+historySendIconFgOver: bright_orange; // send button icon with mouse over
+
+// ============================================================================
+// GROUP MEMBER COLORS
+// ============================================================================
+
+historyPeer1NameFg: bright_red; // red group member name
+historyPeer1UserpicBg: material_red; // red userpic background
+historyPeer2NameFg: bright_green; // green group member name
+historyPeer2UserpicBg: material_green; // green userpic background
+historyPeer3NameFg: bright_yellow; // yellow group member name
+historyPeer3UserpicBg: material_yellow; // yellow userpic background
+historyPeer4NameFg: bright_blue; // blue group member name
+historyPeer4UserpicBg: material_blue; // blue userpic background
+historyPeer5NameFg: bright_purple; // purple group member name
+historyPeer5UserpicBg: material_purple; // purple userpic background
+historyPeer6NameFg: bright_aqua; // aqua group member name
+historyPeer6UserpicBg: material_aqua; // aqua userpic background
+historyPeer7NameFg: bright_orange; // orange group member name
+historyPeer7UserpicBg: material_orange; // orange userpic background
+historyPeer8NameFg: fg3; // gray group member name
+historyPeer8UserpicBg: neutral_gray; // gray userpic background
+historyPeerUserpicFg: fg0; // userpic initials
+
+// ============================================================================
+// PINNED MESSAGE
+// ============================================================================
+
+historyPinnedBg: msgInBg; // pinned message background
+
+// ============================================================================
+// SCROLL
+// ============================================================================
+
+historyScrollBarBg: scrollBarBg; // scroll bar in chat
+historyScrollBarBgOver: scrollBarBgOver; // scroll bar with mouse over
+historyScrollBg: scrollBg; // scroll bar background
+historyScrollBgOver: scrollBgOver; // scroll bar background with mouse over
+
+// ============================================================================
+// MESSAGE ICONS
+// ============================================================================
+
+historyOutIconFg: bright_green; // outbox tick icon
+historyIconFgInverted: historyOutIconFg; // media tick icon
+
+historySendingOutIconFg: bright_yellow; // outbox sending icon (clock)
+historySendingInIconFg: historySendingOutIconFg; // inbox sending icon
+historySendingInvertedIconFg: historyIconFgInverted; // media sending icon
+
+// ============================================================================
+// UNREAD BAR
+// ============================================================================
+
+historyUnreadBarBg: msgInBg; // unread messages bar background
+historyUnreadBarBorder: windowShadowFg; // unread messages bar shadow
+historyUnreadBarFg: historyTextInFg; // unread messages bar text
+
+// ============================================================================
+// REPLY/FORWARD/EDIT
+// ============================================================================
+
+historyReplyCancelFg: menuIconFg; // cancel button
+historyReplyCancelFgOver: menuIconFgOver; // cancel button with mouse over
+historyReplyIconFg: windowActiveTextFg; // left icon
+historySendIconFg: windowActiveTextFg; // send icon
+historySendIconFgOver: bright_orange; // send icon with mouse over
+
+// ============================================================================
+// TO DOWN BUTTON
+// ============================================================================
+
+historyToDownBg: menuBg; // arrow button background
+historyToDownBgOver: menuBgOver; // arrow button with mouse over
+historyToDownBgRipple: windowBgRipple; // arrow button ripple
+historyToDownFg: menuIconFg; // arrow button icon
+historyToDownFgOver: menuIconFgOver; // arrow button icon with mouse over
+historyToDownShadow: #00000040; // arrow button shadow
+
+// ============================================================================
+// FILE NAMES & ICONS
+// ============================================================================
+
+historyFileNameInFg: historyTextInFg; // inbox filename
+historyFileNameOutFg: historyTextOutFg; // outbox filename
+
+historyFileInIconFg: fg1; // inbox file icon
+historyFileInRadialFg: historyFileInIconFg; // inbox file radial animation
+historyFileOutIconFg: fg1; // outbox file icon
+historyFileOutRadialFg: historyFileOutIconFg; // outbox file radial animation
+historyFileThumbIconFg: fg1; // file with thumbnail icon
+historyFileThumbRadialFg: historyFileThumbIconFg; // file with thumbnail radial animation
+
+// ============================================================================
+// SELECTED MESSAGE COLORS
+// ============================================================================
+
+historyTextInFgSelected: fg0; // inbox selected message text
+historyTextOutFgSelected: fg0; // outbox selected message text
+
+historyOutIconFgSelected: fg0; // outbox tick in selected message
+historyCallArrowInFgSelected: fg0; // received call arrow in selected message
+historyCallArrowMissedInFgSelected: fg0; // missed call arrow in selected message
+historyCallArrowOutFgSelected: fg0; // outgoing call arrow in selected message
+
+historyPeer1NameFgSelected: fg0; // red group member in selected message
+historyPeer2NameFgSelected: fg0; // green group member in selected message
+historyPeer3NameFgSelected: fg0; // yellow group member in selected message
+historyPeer4NameFgSelected: fg0; // blue group member in selected message
+historyPeer5NameFgSelected: fg0; // purple group member in selected message
+historyPeer6NameFgSelected: fg0; // aqua group member in selected message
+historyPeer7NameFgSelected: fg0; // orange group member in selected message
+historyPeer8NameFgSelected: fg0; // gray group member in selected message
+
+historyFileNameInFgSelected: fg0; // inbox filename in selected message
+historyFileNameOutFgSelected: fg0; // outbox filename in selected message
+
+historyFileInIconFgSelected: historyFileInIconFg; // inbox file icon in selected message
+historyFileInRadialFgSelected: historyFileInRadialFg; // inbox file radial in selected message
+historyFileOutIconFgSelected: historyFileOutIconFg; // outbox file icon in selected message
+historyFileOutRadialFgSelected: historyFileOutRadialFg; // outbox file radial in selected message
+historyFileThumbIconFgSelected: historyFileThumbIconFg; // file icon in selected message
+historyFileThumbRadialFgSelected: historyFileThumbRadialFg; // file radial in selected message
+
+// ============================================================================
+// PROFILE
+// ============================================================================
+
+profileAdminStartFg: bright_red; // admin star icon
+
+// ============================================================================
+// SHARED MEDIA
+// ============================================================================
+
+overviewPhotoSelectOverlay: overlay; // selected photos overlay
+
+// ============================================================================
+// TITLE BAR (Windows)
+// ============================================================================
+
+titleBg: bg0_hard; // window title background (inactive)
+titleBgActive: titleBg; // window title background (active)
+titleShadow: windowShadowFg;
+titleButtonBg: none; // title button background (inactive)
+titleButtonFg: fg3; // title button icon (inactive)
+titleButtonCloseBg: none; // title close button background (inactive)
+titleButtonCloseFg: bright_red; // title close button icon (inactive)
+
+titleButtonBgOver: bg1; // title button background with mouse over (inactive)
+titleButtonFgOver: fg0; // title button icon with mouse over (inactive)
+titleButtonCloseBgOver: bright_red; // title close button with mouse over (inactive)
+titleButtonCloseFgOver: bg0_hard; // title close button icon with mouse over (inactive)
+
+titleButtonBgActive: titleButtonBg; // title button background (active)
+titleButtonFgActive: fg2; // title button icon (active)
+titleButtonCloseBgActive: titleButtonCloseBg; // title close button background (active)
+titleButtonCloseFgActive: bright_red; // title close button icon (active)
+
+titleButtonBgActiveOver: bg1; // title button with mouse over (active)
+titleButtonFgActiveOver: fg0; // title button icon with mouse over (active)
+titleButtonCloseBgActiveOver: bright_red; // title close button with mouse over (active)
+titleButtonCloseFgActiveOver: bg0_hard; // title close button icon with mouse over (active)
+
+// ============================================================================
+// SIDEBAR (Filters)
+// ============================================================================
+
+sideBarBg: bg0_hard; // sidebar background
+sideBarBgRipple: windowBgRipple; // sidebar ripple
+sideBarTextFg: fg4; // sidebar text
+sideBarIconFg: menuIconFg; // sidebar icon
+sideBarBadgeBg: bright_red; // sidebar badge background
+sideBarBadgeBgMuted: sideBarIconFg; // sidebar muted badge background
+
+sideBarBgActive: dialogsBgActive; // sidebar active background
+sideBarTextFgActive: windowActiveTextFg; // sidebar active text
+sideBarIconFgActive: windowActiveTextFg; // sidebar active icon
+
+// ============================================================================
+// STATISTICS / SYNTAX HIGHLIGHTING
+// ============================================================================
+
+statisticsChartLineBlue: bright_blue; // syntax: keyword, function
+statisticsChartLineRed: bright_red; // syntax: property, tag, number
+statisticsChartLineOrange: bright_orange; // syntax: selector, string
+statisticsChartLinePurple: bright_purple; // syntax: class-name
+statisticsChartLineLightblue: neutral_gray; // syntax: comment
+
+statisticsChartLineGreen: neutral_green; // chart line green
+statisticsChartLineLightgreen: material_green; // chart line light green
+statisticsChartLineGolden: neutral_yellow; // chart line golden
+statisticsChartLineIndigo: neutral_purple; // chart line indigo
+statisticsChartLineCyan: neutral_aqua; // chart line cyan
