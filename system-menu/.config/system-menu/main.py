@@ -232,6 +232,7 @@ if __name__ == "__main__":
                 framework.Action("Systemd manager", "kitty --hold -e systemd-manager-tui", icon="", exit=True),
                 framework.Action("Installed packages", f"kitty -e {SCRIPTS_DIR}/installed_packages.sh", icon="", exit=True),
                 framework.Action("System health", f"kitty -e {SCRIPTS_DIR}/system_health.py", icon="", exit=True),
+                framework.Action("Asus Center", f"kitty -e sudo {SCRIPTS_DIR}/asus_center.py", icon="󰊖", exit=True),
                 framework.Action("Update system", f"kitty -e sudo {SCRIPTS_DIR}/update_system.py", icon="", exit=True),
                 framework.Action("Clean cache", f"kitty -e sudo {SCRIPTS_DIR}/clean_cache.py", icon="󰃢", exit=True),
                 framework.Action("Backups manager", f"kitty -e sudo {SCRIPTS_DIR}/backup_manager.py", icon="", exit=True)
