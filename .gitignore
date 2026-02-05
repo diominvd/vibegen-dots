@@ -3,3 +3,5 @@ yamusic
 scripts/.config/scripts/vpn
 mihomo
 coding-stats.json
+gtk-3.0/.config/gtk-3.0/settings.ini
+nvim/.config/nvim/lazy-lock.json
