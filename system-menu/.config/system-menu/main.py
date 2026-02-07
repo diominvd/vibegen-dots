@@ -238,8 +238,12 @@ if __name__ == "__main__":
                 framework.Action("Backups manager", f"kitty -e sudo {SCRIPTS_DIR}/backup_manager.py", icon="", exit=True)
             ]),
             framework.Parent("Capture", icon="", children=[
+                framework.Parent("Screenshot", icon="", search=False, children=[
+                    framework.Action("Fullscreen", f"{SCRIPTS_DIR}/make_screenshot.sh --full", icon="󱣴", exit=True),
+                    framework.Action("Window", f"{SCRIPTS_DIR}/make_screenshot.sh --window", icon="", exit=True),
+                    framework.Action("Area", f"{SCRIPTS_DIR}/make_screenshot.sh --area", icon="", exit=True),
+                ]),
                 framework.Action("Record screen", f"{SCRIPTS_DIR}/record_screen.sh", icon="", exit=True),
-                framework.Action("Full screenshot", f"{SCRIPTS_DIR}/make_full_screenshot.sh", icon="", exit=True),
             ]),
             framework.Parent("Power menu", icon="", children=[
                 framework.Action("Lock", "hyprlock", icon="", exit=True),
