@@ -7,8 +7,8 @@
     "separator": "",
     "color": {
       "keys": "cyan",
-      "values": "white",
-    },
+      "values": "white"
+    }
   },
   "modules": [
     "break",
@@ -16,40 +16,41 @@
       "type": "host",
       "key": "HOST ",
       "format": "dash@diominvd",
-      "keyColor": "magenta",
+      "keyColor": "magenta"
     },
     "break",
     {
       "type": "os",
       "key": "OS   ",
-      "keyColor": "red",
+      "keyColor": "red"
     },
     {
       "type": "cpu",
       "key": "CPU  ",
-      "keyColor": "green",
+      "keyColor": "green"
     },
     {
       "type": "gpu",
       "key": "GPU  ",
-      "keyColor": "yellow",
+      "keyColor": "yellow"
     },
     {
       "type": "memory",
       "key": "MEM  ",
       "format": "{1} / {2} ({3})",
-      "keyColor": "blue",
+      "keyColor": "blue"
     },
     {
       "type": "packages",
       "key": "PCK  ",
-      "keyColor": "cyan",
+      "keyColor": "cyan"
     },
     {
       "type": "uptime",
       "key": "UPT  ",
-      "keyColor": "white",
+      "keyColor": "white"
     },
-    "break",
-  ],
+    "break"
+  ]
 }
+

@@ -1,9 +1,10 @@
--- ============================================================================
+-- -----------------------------------------------------
 -- Automatic Commands (Autocmds)
--- ============================================================================
+-- -----------------------------------------------------
 
 local apm_group = vim.api.nvim_create_augroup("APMAutoStart", { clear = true })
 
+-- Start APM monitor on VimEnter with a small delay
 vim.api.nvim_create_autocmd("VimEnter", {
   group = apm_group,
   callback = function()

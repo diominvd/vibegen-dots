@@ -1,9 +1,24 @@
+/* ----------------------------------------------------- */
+/* Imports                                               */
+/* ----------------------------------------------------- */
 @import "components/colors.css";
 @import "components/panel-color.css";
 @import "components/widgets-style.css";
 
+/* ----------------------------------------------------- */
+/* Global Styles                                         */
+/* ----------------------------------------------------- */
 * {
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
-    font-size: 13px;
-    font-weight: 800;
+    font-family:                "JetBrainsMono Nerd Font", sans-serif;
+    font-size:                  13px;
+    font-weight:                800;
+}
+
+/* ----------------------------------------------------- */
+/* Waybar Main                                           */
+/* ----------------------------------------------------- */
+#waybar {
+    background-color:           @bg;
+    color:                      @fg;
+    border-bottom:              0px;
 }

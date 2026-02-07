@@ -1,4 +1,6 @@
-# --- Appearance ---
+# -----------------------------------------------------
+# Appearance
+# -----------------------------------------------------
 font=JetBrainsMono Nerd Font 10
 width=250
 height=100
@@ -7,29 +9,37 @@ padding=15
 border-size=4
 border-radius=0
 
-# --- Colors ---
+# -----------------------------------------------------
+# Colors
+# -----------------------------------------------------
 background-color=#151515
 text-color=#ebdbb2
 border-color=#282828
 progress-color=over #d79921
 
-# --- Icons ---
+# -----------------------------------------------------
+# Icons
+# -----------------------------------------------------
 max-icon-size=48
 icon-location=left
 
-# --- Layout ---
+# -----------------------------------------------------
+# Layout & Behavior
+# -----------------------------------------------------
 format=<b>%s</b>\n%b
-
-# --- Behavior ---
 default-timeout=5000
 layer=overlay
 anchor=top-right
 
-# --- Urgency: High ---
+# -----------------------------------------------------
+# Urgency Rules
+# -----------------------------------------------------
 [urgency=high]
 border-color=#fb4934
 text-color=#fb4934
 
-# --- Specific Apps (Optional) ---
+# -----------------------------------------------------
+# App Specific Rules
+# -----------------------------------------------------
 [app-name=Screenshot]
 text-color=#ebdbb2

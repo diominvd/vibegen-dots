@@ -1,22 +1,32 @@
-add_newline = false
+# -----------------------------------------------------
+# General
+# -----------------------------------------------------
+add_newline     = false
+format          = "$directory$git_branch$git_status$character"
 
-format = """$directory$git_branch$git_status$character"""
-
+# -----------------------------------------------------
+# Directory
+# -----------------------------------------------------
 [directory]
-style = "bold white" 
-format = "[$path]($style) "
+style           = "bold white"
+format          = "[$path]($style) "
 truncation_length = 3
 
+# -----------------------------------------------------
+# Git Status
+# -----------------------------------------------------
 [git_branch]
-symbol = "󰊢 "
-style = "bold magenta"
-format = "on [$symbol$branch]($style) "
+symbol          = "󰊢 "
+style           = "bold magenta"
+format          = "on [$symbol$branch]($style) "
 
 [git_status]
-style = "bold red"
-format = "([$ahead_behind]($style))"
+style           = "bold red"
+format          = "([$ahead_behind]($style))"
 
+# -----------------------------------------------------
+# Character
+# -----------------------------------------------------
 [character]
-success_symbol = "[](bold green)"
-error_symbol   = "[](bold red)"
-
+success_symbol  = "[➜](bold green) "
+error_symbol    = "[➜](bold red) "

@@ -238,7 +238,7 @@ msgWaveformOutInactive: bg3; // outgoing voice message inactive waveform
 historyComposeAreaBg: bg0; // message field background
 historyComposeAreaFg: fg; // message field text
 historyComposeAreaFgService: fg3; // message field service text (like bot commands)
-historyReplyBg: bg1; // reply/edit bar background
+historyReplyBg: bg0; // reply/edit bar background
 historyReplyIconFg: windowActiveTextFg; // reply icon
 historySendIconFg: windowActiveTextFg; // send button icon
 historySendIconFgOver: bright_orange; // send button icon with mouse over

@@ -1,10 +1,16 @@
+/* ----------------------------------------------------- */
+/* Colors Configuration                                  */
+/* ----------------------------------------------------- */
+
 * {
+    /* --- Base Palette --- */
     bg:      #151515;
     bg-alt:  #282828;
     fg:      #ebdbb2;
     accent:  #d79921;
     urgent:  #fb4934;
 
+    /* --- Global Mapping --- */
     background-color: @bg;
     text-color:       @fg;
 }
